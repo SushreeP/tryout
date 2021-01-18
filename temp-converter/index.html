@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .card {
+        height: 100px;
+        width: 100px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="temp-converter">
+      <input type="text" id="celcius" placeholder="celcius" />
+      <button onclick="convert()">Convert</button>
+      <input type="text" id="farenheit" placeholder="farenheit" />
+    </div>
+    <div id="calc">
+      <input type="text" id="n1" placeholder="n1" />
+      <input type="text" id="n2" placeholder="n2" />
+      <button onclick="add()">+</button>
+      <button onclick="factorial()">!</button>
+      <input type="text" id="res" placeholder="Result" />
+    </div>
+    <div id="theme-selector">
+      <input
+        type="radio"
+        name="theme"
+        id="black"
+        value="black"
+        onchange="apply()"
+      />
+      <label for="black">Black</label>
+      <input
+        type="radio"
+        name="theme"
+        id="white"
+        value="white"
+        onchange="apply()"
+        checked
+      />
+      <label for="white">White</label>
+      <div id="box" style="height: 100px; width: 100px;">
+        <h1>Hello!</h1>
+      </div>
+
+      <div id="demo">
+        <button onclick="render()">Render</button>
+        <button onclick="dropdownmaker()">Get a dropdown</button>
+        <select id="colors"></select>
+      </div>
+    </div>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
