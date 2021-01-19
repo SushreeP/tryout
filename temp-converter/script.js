@@ -1,31 +1,17 @@
-function convert() {
-  let celcius = document.getElementById("celcius").value;
-  document.getElementById("farenheit").value = celcius * (9 / 5) + 32;
+let array = [7, 9, 8, 3, 5, 3, 7];
+let sum = 0;
+let i = 0;
+while (i < array.length) {
+  sum += array[i++];
 }
-
-function add() {
-  let n1 = Number.parseInt(document.getElementById("n1").value);
-  let n2 = Number.parseInt(document.getElementById("n2").value);
-  document.getElementById("res").value = n1 + n2;
-}
-
+console.log(sum);
 function factorial() {
-  let n1 = Number.parseInt(document.getElementById("n1").value);
   let fact = 1;
-  while (n1 > 0) {
-    fact *= n1--;
+  let n = Number.parseInt(document.getElementById("n1"));
+  while (n > 0) {
+    fact *= n--;
   }
   document.getElementById("res").value = fact;
-}
-
-function apply() {
-  if (document.getElementById("black").checked) {
-    document.getElementById("box").style.backgroundColor = "black";
-    document.getElementById("box").style.color = "green";
-  } else {
-    document.getElementById("box").style.backgroundColor = "white";
-    document.getElementById("box").style.color = "black";
-  }
 }
 
 let arr = ["green", "red", "orange", "purple", "blue"];
@@ -47,5 +33,41 @@ function dropdownmaker() {
     o.addEventListener("change", function c() {
       console.log(o.value);
     });
+  }
+}
+
+let carlist = [
+  { brand: "Ford", model: "mustang", color: "red", owner: "sushree" },
+];
+
+function addtoList() {
+  let c = {
+    brand: document.getElementById("brand").value,
+    model: document.getElementById("model").value,
+    color: document.getElementById("color").value,
+    owner: document.getElementById("owner").value,
+  };
+  carlist.push(c);
+}
+
+function renderCard() {
+  for (let i = 0; i < carlist.length; i++) {
+    let br = document.createElement("h6");
+    let mo = document.createElement("h6");
+    let co = document.createElement("h6");
+    let ow = document.createElement("h6");
+
+    br.innerHTML = carlist[i].brand;
+    mo.innerHTML = carlist[i].model;
+    co.innerHTML = carlist[i].color;
+    ow.innerHTML = carlist[i].owner;
+
+    let card = document.createElement("div");
+    card.className = "card";
+    card.appendChild(br);
+    card.appendChild(mo);
+    card.appendChild(co);
+    card.appendChild(ow);
+    document.getElementById("car-cards").appendChild(card);
   }
 }
